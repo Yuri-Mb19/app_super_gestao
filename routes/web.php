@@ -11,8 +11,16 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+*/
+
+Route::get('/',[\App\Http\Controllers\PrincipalController::class,'Principal'])->name('site.index');
+Route::get('/sobre-nos',[\App\Http\Controllers\SobreNosController::class,'sobreNos'])->name('site.sobre-nos');
+
+Route::get('/contato',[\App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato');
+
+
